@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
 }
 body {
+  color: white;
   margin: 0;
   background-color: #040714;
   color: white;
@@ -22,4 +22,5 @@ code {
 
 a {
   text-decoration: none;
+  color: white;
 }
