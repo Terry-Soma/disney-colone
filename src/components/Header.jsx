@@ -12,7 +12,9 @@ export default function Header() {
   // const signIn = () => {};
   return (
     <Nav>
-      <Logo src="/images/logo.svg" />
+      <Link to="/">
+        <Logo src="/images/logo.svg" />
+      </Link>
       {!userName ? (
         <LoginContainer>
           <Login>Login</Login>
