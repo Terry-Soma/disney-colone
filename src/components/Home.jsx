@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ImgSlider from './ImgSlider';
 import Viewers from './Viewers';
 import Movies from './Movies';
+import { useDispatch } from 'react-redux';
+import { setMovies } from '../features/movies/movieSlice';
 export default function Home() {
+  const dispatch = useDispatch();
+  // fetch data
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((json) => dispatch(setMovies(json)));
+  }, []);
   return (
     <Container>
       <ImgSlider />

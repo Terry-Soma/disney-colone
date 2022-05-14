@@ -1,6 +1,9 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 export default function Detail() {
+  const { id } = useParams();
+  console.log(id);
   return (
     <Container>
       <Background>
@@ -64,6 +67,7 @@ const ImageTitle = styled.div`
   min-height: 170px;
   width: 35vw;
   min-width: 200px;
+  max-width: 60px;
   img {
     width: 100%;
     height: 100%;
@@ -121,6 +125,8 @@ const GroupWatchButton = styled(AddButton)`
 `;
 const SubTitle = styled.div`
   margin-top: 28px;
+  max-width: 680px;
+
   color: rgb(249, 249, 249);
   min-height: 24px;
 `;
@@ -129,4 +135,5 @@ const Description = styled.div`
   line-height: 1.4;
   font-size: 24px;
   margin-top: 16px;
+  max-width: 760px;
 `;
