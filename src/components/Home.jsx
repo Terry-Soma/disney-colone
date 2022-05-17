@@ -10,7 +10,7 @@ export default function Home() {
   // fetch data
   
   function gets(){
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => response.json())
   .then(json => dispatch(setMovies(json)));
 
