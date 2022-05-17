@@ -9,10 +9,10 @@ export default function Home() {
   const dispatch = useDispatch();
   // fetch data
   
-  async function gets(){
-       let mo = await fetch('https://jsonplaceholder.typicode.com/users');
-      mo = mo.json();
-    dispatch(setMovies(mo));
+  function gets(){
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => dispatch(setMovies(json)));
 
   }
   useEffect(() => {
