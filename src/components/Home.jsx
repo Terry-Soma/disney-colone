@@ -8,12 +8,21 @@ import { setMovies } from '../features/movies/movieSlice';
 export default function Home() {
   const dispatch = useDispatch();
   // fetch data
+  
+  async gets()=>{
+       let mo = await fetch('https://jsonplaceholder.typicode.com/users');
+      mo = mo.json();
+    dispatch(setMovies(mo));
+
+  }
   useEffect(() => {
-    
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((json) => dispatch(setMovies(json)));
+      try {
+    gets()
+  } catch (e) {
+     console.log(e);
+  }   
   }, []);
+  
   return (
     <Container>
       <ImgSlider />
