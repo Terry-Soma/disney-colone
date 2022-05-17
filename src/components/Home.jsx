@@ -6,9 +6,10 @@ import Movies from './Movies';
 import { useDispatch } from 'react-redux';
 import { setMovies } from '../features/movies/movieSlice';
 export default function Home() {
-  const dispatch = useDispatch();
+  
   // fetch data
   useEffect(() => {
+    const dispatch = useDispatch();
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((json) => dispatch(setMovies(json)));
