@@ -9,7 +9,7 @@ export default function Home() {
   const dispatch = useDispatch();
   // fetch data
   
-  async gets()=>{
+  async function gets(){
        let mo = await fetch('https://jsonplaceholder.typicode.com/users');
       mo = mo.json();
     dispatch(setMovies(mo));
